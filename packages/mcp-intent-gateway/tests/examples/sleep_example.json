@@ -1,0 +1,31 @@
+{
+  "description": "Example 2 - Sleep Event from REFACTO_MCP.md",
+  "input": {
+    "canonical_fact": {
+      "subjects": ["Léa"],
+      "dimension": "SLEEP_STATE",
+      "value": "ASLEEP",
+      "confidence": 0.95
+    }
+  },
+  "expected_output": {
+    "success": true,
+    "intent_contract": {
+      "child_id": "resolved_from_firstname",
+      "action": "record_sleep",
+      "properties": {
+        "state": "ASLEEP"
+      }
+    }
+  },
+  "mock_api_call": {
+    "method": "POST",
+    "endpoint": "/child/{childId}/add_event",
+    "payload": {
+      "action": "record_sleep",
+      "properties": {
+        "state": "ASLEEP"
+      }
+    }
+  }
+}

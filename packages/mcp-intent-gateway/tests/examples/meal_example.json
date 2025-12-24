@@ -1,0 +1,31 @@
+{
+  "description": "Example 1 - Meal Event from REFACTO_MCP.md",
+  "input": {
+    "canonical_fact": {
+      "subjects": ["Gabriel"],
+      "dimension": "MEAL_MAIN_CONSUMPTION",
+      "value": "ALL",
+      "confidence": 0.92
+    }
+  },
+  "expected_output": {
+    "success": true,
+    "intent_contract": {
+      "child_id": "resolved_from_firstname",
+      "action": "record_meal",
+      "properties": {
+        "main": "ALL"
+      }
+    }
+  },
+  "mock_api_call": {
+    "method": "POST",
+    "endpoint": "/child/{childId}/add_event",
+    "payload": {
+      "action": "record_meal",
+      "properties": {
+        "main": "ALL"
+      }
+    }
+  }
+}

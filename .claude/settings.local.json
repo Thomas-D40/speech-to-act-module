@@ -5,7 +5,20 @@
       "Bash(npm run build)",
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(tree:*)",
+      "Bash(pip install:*)",
+      "Bash(uv pip install:*)",
+      "Bash(.venv/Scripts/python.exe --version)",
+      "Bash(.venv/Scripts/pip.exe:*)",
+      "Bash(../../.venv/Scripts/ruff.exe check:*)",
+      "Bash(../../.venv/Scripts/mypy.exe src/)",
+      "Bash(../../.venv/Scripts/pytest.exe tests/ -v)",
+      "Bash(.venv/Scripts/python.exe:*)",
+      "Bash(cat:*)",
+      "Bash(PYTHONPATH=./packages/mcp-intent-gateway/src .venv/Scripts/python.exe:*)",
+      "Bash(PYTHONPATH=./src ../../.venv/Scripts/pytest.exe:*)",
+      "Bash(../../.venv/Scripts/pytest.exe tests/ -v --tb=short)"
     ]
   }
 }
