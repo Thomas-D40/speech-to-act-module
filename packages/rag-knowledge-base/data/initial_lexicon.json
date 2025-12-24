@@ -1,0 +1,226 @@
+{
+    "MEAL_MAIN_CONSUMPTION": {
+        "NONE": [
+            "rien mangé",
+            "n'a rien pris",
+            "pas touché",
+            "refusé",
+            "0%"
+        ],
+        "QUARTER": [
+            "un quart",
+            "25%",
+            "un peu",
+            "quelques bouchées",
+            "presque rien"
+        ],
+        "HALF": [
+            "la moitié",
+            "50%",
+            "une partie",
+            "la moitié de"
+        ],
+        "THREE_QUARTERS": [
+            "trois quarts",
+            "75%",
+            "presque tout",
+            "la plupart",
+            "quasi tout"
+        ],
+        "ALL": [
+            "tout",
+            "100%",
+            "tout fini",
+            "assiette vide",
+            "terminé",
+            "complètement"
+        ]
+    },
+    "MEAL_DESSERT_CONSUMPTION": {
+        "NONE": [
+            "rien mangé",
+            "n'a rien pris",
+            "pas touché",
+            "refusé",
+            "0%"
+        ],
+        "QUARTER": [
+            "un quart",
+            "25%",
+            "un peu",
+            "quelques bouchées",
+            "presque rien"
+        ],
+        "HALF": [
+            "la moitié",
+            "50%",
+            "une partie",
+            "la moitié de"
+        ],
+        "THREE_QUARTERS": [
+            "trois quarts",
+            "75%",
+            "presque tout",
+            "la plupart",
+            "quasi tout"
+        ],
+        "ALL": [
+            "tout",
+            "100%",
+            "tout fini",
+            "assiette vide",
+            "terminé",
+            "complètement"
+        ]
+    },
+    "MEAL_VEGETABLE_CONSUMPTION": {
+        "NONE": [
+            "rien mangé",
+            "n'a rien pris",
+            "pas touché",
+            "refusé",
+            "0%"
+        ],
+        "QUARTER": [
+            "un quart",
+            "25%",
+            "un peu",
+            "quelques bouchées",
+            "presque rien"
+        ],
+        "HALF": [
+            "la moitié",
+            "50%",
+            "une partie",
+            "la moitié de"
+        ],
+        "THREE_QUARTERS": [
+            "trois quarts",
+            "75%",
+            "presque tout",
+            "la plupart",
+            "quasi tout"
+        ],
+        "ALL": [
+            "tout",
+            "100%",
+            "tout fini",
+            "assiette vide",
+            "terminé",
+            "complètement"
+        ]
+    },
+    "MEAL_TYPE": {
+        "BREAKFAST": [
+            "petit déjeuner",
+            "petit-déj",
+            "pdj",
+            "matin"
+        ],
+        "MORNING_SNACK": [
+            "collation du matin",
+            "goûter du matin",
+            "10h"
+        ],
+        "LUNCH": [
+            "déjeuner",
+            "dej",
+            "midi",
+            "repas du midi"
+        ],
+        "AFTERNOON_SNACK": [
+            "goûter",
+            "collation",
+            "16h",
+            "après-midi"
+        ],
+        "DINNER": [
+            "dîner",
+            "soir",
+            "repas du soir"
+        ]
+    },
+    "SLEEP_STATE": {
+        "ASLEEP": [
+            "dort",
+            "endormi",
+            "s'est endormi",
+            "dodo"
+        ],
+        "AWAKE": [
+            "réveillé",
+            "éveillé",
+            "s'est réveillé",
+            "debout"
+        ],
+        "NAP_START": [
+            "sieste",
+            "début de sieste",
+            "couché pour la sieste",
+            "s'endort"
+        ],
+        "NAP_END": [
+            "fin de sieste",
+            "réveillé de la sieste",
+            "sieste terminée"
+        ]
+    },
+    "DIAPER_CHANGE_TYPE": {
+        "WET": [
+            "pipi",
+            "mouillé",
+            "couche mouillée",
+            "urine"
+        ],
+        "DIRTY": [
+            "caca",
+            "sale",
+            "couche sale",
+            "selles"
+        ],
+        "BOTH": [
+            "pipi et caca",
+            "les deux",
+            "mouillé et sale"
+        ]
+    },
+    "CHILD_MOOD": {
+        "HAPPY": [
+            "content",
+            "joyeux",
+            "souriant",
+            "de bonne humeur",
+            "gai"
+        ],
+        "CALM": [
+            "calme",
+            "tranquille",
+            "apaisé",
+            "serein"
+        ],
+        "FUSSY": [
+            "grognon",
+            "capricieux",
+            "râle",
+            "maussade"
+        ],
+        "CRYING": [
+            "pleure",
+            "en pleurs",
+            "chiale",
+            "larmes"
+        ],
+        "TIRED": [
+            "fatigué",
+            "épuisé",
+            "crevé",
+            "sommeil"
+        ],
+        "ENERGETIC": [
+            "énergique",
+            "excité",
+            "plein d'énergie",
+            "actif"
+        ]
+    }
+}

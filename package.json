@@ -1,0 +1,17 @@
+{
+  "name": "speech-to-act-module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Speech-to-Act system with deterministic intention contracts",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "dev": "npm run dev --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
