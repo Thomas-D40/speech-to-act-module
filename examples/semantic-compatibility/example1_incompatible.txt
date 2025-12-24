@@ -1,0 +1,27 @@
+# Example 1: Incompatible Dimensions (must split)
+
+## Input
+Gabriel ate everything and slept
+
+## Expected Behavior
+TWO separate CanonicalFacts should be emitted because eating and sleeping are semantically distinct activities.
+
+## Expected Output
+Tool Call 1:
+{
+  "subjects": ["Gabriel"],
+  "dimension": "MEAL_MAIN_CONSUMPTION",
+  "value": "ALL",
+  "confidence": 0.95
+}
+
+Tool Call 2:
+{
+  "subjects": ["Gabriel"],
+  "dimension": "SLEEP_STATE",
+  "value": "ASLEEP",
+  "confidence": 0.9
+}
+
+## Compatibility Rule Applied
+[MUST_SPLIT] Eating and sleeping are semantically distinct activities that must be recorded as separate facts.

@@ -1,6 +1,6 @@
 {
     "MEAL_MAIN_CONSUMPTION": {
-        "NONE": [
+        "NOTHING": [
             "rien mangé",
             "n'a rien pris",
             "pas touché",
@@ -37,7 +37,7 @@
         ]
     },
     "MEAL_DESSERT_CONSUMPTION": {
-        "NONE": [
+        "NOTHING": [
             "rien mangé",
             "n'a rien pris",
             "pas touché",
@@ -74,7 +74,7 @@
         ]
     },
     "MEAL_VEGETABLE_CONSUMPTION": {
-        "NONE": [
+        "NOTHING": [
             "rien mangé",
             "n'a rien pris",
             "pas touché",
@@ -117,22 +117,20 @@
             "pdj",
             "matin"
         ],
-        "MORNING_SNACK": [
+        "SNACK": [
             "collation du matin",
             "goûter du matin",
-            "10h"
+            "10h",
+            "goûter",
+            "collation",
+            "16h",
+            "après-midi"
         ],
         "LUNCH": [
             "déjeuner",
             "dej",
             "midi",
             "repas du midi"
-        ],
-        "AFTERNOON_SNACK": [
-            "goûter",
-            "collation",
-            "16h",
-            "après-midi"
         ],
         "DINNER": [
             "dîner",
@@ -145,24 +143,31 @@
             "dort",
             "endormi",
             "s'est endormi",
-            "dodo"
-        ],
-        "AWAKE": [
-            "réveillé",
-            "éveillé",
-            "s'est réveillé",
-            "debout"
-        ],
-        "NAP_START": [
+            "dodo",
             "sieste",
             "début de sieste",
             "couché pour la sieste",
             "s'endort"
         ],
-        "NAP_END": [
+        "WOKE_UP": [
+            "réveillé",
+            "éveillé",
+            "s'est réveillé",
+            "debout",
             "fin de sieste",
             "réveillé de la sieste",
             "sieste terminée"
+        ],
+        "RESTING": [
+            "se repose",
+            "repos",
+            "calme",
+            "tranquille"
+        ],
+        "REFUSED_SLEEP": [
+            "refuse de dormir",
+            "ne veut pas dormir",
+            "pas envie de dormir"
         ]
     },
     "DIAPER_CHANGE_TYPE": {
@@ -198,29 +203,32 @@
             "apaisé",
             "serein"
         ],
-        "FUSSY": [
-            "grognon",
-            "capricieux",
-            "râle",
-            "maussade"
-        ],
-        "CRYING": [
-            "pleure",
-            "en pleurs",
-            "chiale",
-            "larmes"
-        ],
         "TIRED": [
             "fatigué",
             "épuisé",
             "crevé",
             "sommeil"
         ],
-        "ENERGETIC": [
+        "UPSET": [
+            "pleure",
+            "en pleurs",
+            "chiale",
+            "larmes",
+            "contrarié",
+            "bouleversé"
+        ],
+        "EXCITED": [
             "énergique",
             "excité",
             "plein d'énergie",
             "actif"
+        ],
+        "CRANKY": [
+            "grognon",
+            "capricieux",
+            "râle",
+            "maussade",
+            "ronchon"
         ]
     }
 }

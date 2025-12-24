@@ -69,4 +69,17 @@ def init_db():
     print(f"Database ready at {VECTOR_DB_PATH}")
 
 if __name__ == "__main__":
+    # Build lexical RAG collection
     init_db()
+
+    # Build compatibility RAG collection
+    print("\n" + "="*60)
+    print("Now building compatibility rules collection...")
+    print("="*60 + "\n")
+
+    try:
+        from init_compatibility_db import init_db as init_compatibility
+        init_compatibility()
+    except Exception as e:
+        print(f"Error building compatibility collection: {e}")
+        print("You can manually run: python src/init_compatibility_db.py")

@@ -1,0 +1,28 @@
+# Example 3: Compatible but Distinct Concepts
+
+## Input
+Gabriel ate everything and was happy
+
+## Expected Behavior
+TWO separate CanonicalFacts should be emitted.
+Mood and eating can co-occur but should be separate facts unless causally linked.
+
+## Expected Output
+Tool Call 1:
+{
+  "subjects": ["Gabriel"],
+  "dimension": "MEAL_MAIN_CONSUMPTION",
+  "value": "ALL",
+  "confidence": 0.95
+}
+
+Tool Call 2:
+{
+  "subjects": ["Gabriel"],
+  "dimension": "CHILD_MOOD",
+  "value": "HAPPY",
+  "confidence": 0.9
+}
+
+## Compatibility Rule Applied
+[COMPATIBLE_BUT_SEPARATE] Mood and eating can co-occur but should be separate facts unless causally linked.

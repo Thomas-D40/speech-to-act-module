@@ -82,3 +82,69 @@ class VectorRAGRetriever(RAGRetriever):
 
         except Exception as e:
             return f"Error gathering context: {e}"
+
+
+class CompatibilityRAGRetriever(RAGRetriever):
+    """
+    Retrieves semantic compatibility rules for dimension combinations.
+    """
+
+    def __init__(self, db_path: str = VECTOR_DB_PATH):
+        self.db_path = db_path
+        self._collection = None
+        self._init_client()
+
+    def _init_client(self):
+        """Initialize ChromaDB client for compatibility rules"""
+        if not os.path.exists(self.db_path):
+            print(f"WARNING: Compatibility DB not found at {self.db_path}.")
+            return
+
+        try:
+            client = chromadb.PersistentClient(path=self.db_path)
+            # CRITICAL: Same embedding function as lexical RAG
+            ef = embedding_functions.SentenceTransformerEmbeddingFunction(
+                model_name="paraphrase-multilingual-MiniLM-L12-v2"
+            )
+            self._collection = client.get_collection(
+                name="compatibility_rules",
+                embedding_function=ef
+            )
+        except Exception as e:
+            print(f"ERROR initializing Compatibility ChromaDB: {e}")
+
+    def retrieve_context(self, query: str, top_k: int = 3) -> str:
+        """
+        Retrieve compatibility rules for detected dimensions.
+
+        Args:
+            query: Space-separated dimension names (e.g., "MEAL_MAIN_CONSUMPTION SLEEP_STATE")
+            top_k: Number of rules to retrieve
+
+        Returns:
+            Formatted compatibility rules context
+        """
+        if not self._collection:
+            return ""
+
+        try:
+            results = self._collection.query(
+                query_texts=[query],
+                n_results=top_k
+            )
+
+            metadatas = results['metadatas'][0]
+            documents = results['documents'][0]
+
+            if not documents:
+                return ""
+
+            context_lines = ["SEMANTIC COMPATIBILITY RULES (AUTHORITATIVE):"]
+            for meta, doc in zip(metadatas, documents):
+                rule_type = meta.get('rule_type', 'unknown')
+                context_lines.append(f"- [{rule_type.upper()}] {doc}")
+
+            return "\n".join(context_lines)
+
+        except Exception as e:
+            return f"Error gathering compatibility rules: {e}"

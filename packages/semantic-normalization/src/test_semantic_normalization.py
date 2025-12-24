@@ -1,8 +1,6 @@
 
 import os
 import sys
-import pytest
-from typing import List, Dict
 
 # Add src to path
 sys.path.append(os.path.join(os.path.dirname(__file__), "semantic_normalization"))
@@ -95,7 +93,7 @@ def run_tests():
                 result = normalizer.normalize(phrase)
                 
                 if not result.facts:
-                    print(f"    FAIL: No facts returned.")
+                    print("    FAIL: No facts returned.")
                     continue
                 
                 fact = result.facts[0]
@@ -115,7 +113,7 @@ def run_tests():
                     matches_subjects = not found_subjects.isdisjoint(expected_subjects_set)
 
                 if matches_dim and matches_val and matches_subjects:
-                    print(f"    PASS")
+                    print("    PASS")
                     passed_tests += 1
                 else:
                     print(f"    FAIL: Got [{', '.join(fact.subjects)}] {fact.dimension} -> {fact.value}")

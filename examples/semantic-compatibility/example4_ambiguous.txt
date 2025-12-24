@@ -1,0 +1,14 @@
+# Example 4: Ambiguous Utterance
+
+## Input
+He did everything
+
+## Expected Behavior
+NO dimension can be confidently inferred because "did" is too generic.
+The LLM should either refuse extraction or return very low confidence (< 0.5).
+
+## Expected Output
+No tool calls OR very low confidence response explaining the ambiguity.
+
+## Compatibility Rule Applied
+[AMBIGUOUS_DIMENSION] The verb 'did' is too generic to infer a specific dimension without additional context. Refuse extraction or set confidence below 0.5.

@@ -1,0 +1,21 @@
+# Example 2: Invalid Semantic Pairing
+
+## Input
+Gabriel slept everything
+
+## Expected Behavior
+NO valid CanonicalFact can be formed because "slept" cannot logically combine with consumption dimensions.
+The LLM should refuse extraction or return very low confidence (< 0.3).
+
+## Expected Output
+No tool calls OR:
+{
+  "subjects": ["Gabriel"],
+  "dimension": "SLEEP_STATE",
+  "value": "ASLEEP",
+  "confidence": 0.2
+}
+(Note: The "everything" part should be ignored as semantically nonsensical with "slept")
+
+## Compatibility Rule Applied
+[SEMANTIC_NONSENSE] Sleep-related verbs (slept, sleeping, nap) cannot logically combine with consumption dimensions.

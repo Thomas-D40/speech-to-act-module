@@ -18,7 +18,11 @@
       "Bash(cat:*)",
       "Bash(PYTHONPATH=./packages/mcp-intent-gateway/src .venv/Scripts/python.exe:*)",
       "Bash(PYTHONPATH=./src ../../.venv/Scripts/pytest.exe:*)",
-      "Bash(../../.venv/Scripts/pytest.exe tests/ -v --tb=short)"
+      "Bash(../../.venv/Scripts/pytest.exe tests/ -v --tb=short)",
+      "Bash(PYTHONPATH=./src ../../.venv/Scripts/python.exe:*)",
+      "Bash(../../.venv/Scripts/pip.exe install:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)"
     ]
   }
 }

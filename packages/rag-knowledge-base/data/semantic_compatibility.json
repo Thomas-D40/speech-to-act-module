@@ -1,0 +1,86 @@
+{
+  "incompatible_pairs": [
+    {
+      "dimensions": ["MEAL_MAIN_CONSUMPTION", "SLEEP_STATE"],
+      "rule_type": "must_split",
+      "explanation": "Eating and sleeping are semantically distinct activities that must be recorded as separate facts.",
+      "examples": ["Gabriel ate and slept", "il a mangé et dormi"]
+    },
+    {
+      "dimensions": ["SLEEP_STATE", "DIAPER_CHANGE_TYPE"],
+      "rule_type": "must_split",
+      "explanation": "Sleep state and diaper changes are independent events.",
+      "examples": ["he slept and had a diaper change"]
+    },
+    {
+      "dimensions": ["CHILD_MOOD", "MEAL_MAIN_CONSUMPTION"],
+      "rule_type": "compatible_but_separate",
+      "explanation": "Mood and eating can co-occur but should be separate facts unless causally linked.",
+      "examples": ["Gabriel ate everything and was happy"]
+    },
+    {
+      "dimensions": ["ACTIVITY_TYPE", "HEALTH_STATUS"],
+      "rule_type": "must_split",
+      "explanation": "Activities and health observations are distinct concerns. Emit separate facts.",
+      "examples": ["played outside and had a fever"]
+    },
+    {
+      "dimensions": ["MEAL_DESSERT_CONSUMPTION", "SLEEP_STATE"],
+      "rule_type": "must_split",
+      "explanation": "Dessert consumption and sleep are semantically distinct activities.",
+      "examples": ["ate dessert and slept"]
+    },
+    {
+      "dimensions": ["MEAL_VEGETABLE_CONSUMPTION", "SLEEP_STATE"],
+      "rule_type": "must_split",
+      "explanation": "Vegetable consumption and sleep are semantically distinct activities.",
+      "examples": ["ate vegetables and slept"]
+    }
+  ],
+  "invalid_pairings": [
+    {
+      "verb": "slept",
+      "incompatible_with": ["MEAL_MAIN_CONSUMPTION", "MEAL_DESSERT_CONSUMPTION", "MEAL_VEGETABLE_CONSUMPTION"],
+      "rule_type": "semantic_nonsense",
+      "explanation": "Sleep-related verbs (slept, sleeping, nap) cannot logically combine with consumption dimensions. This is semantically invalid.",
+      "examples": ["slept everything", "dormi tout"]
+    },
+    {
+      "verb": "ate",
+      "incompatible_with": ["SLEEP_STATE"],
+      "rule_type": "semantic_nonsense",
+      "explanation": "Eating verbs cannot logically combine with sleep states. This is semantically invalid.",
+      "examples": ["ate asleep"]
+    },
+    {
+      "verb": "sleeping",
+      "incompatible_with": ["MEAL_MAIN_CONSUMPTION", "MEAL_DESSERT_CONSUMPTION", "MEAL_VEGETABLE_CONSUMPTION", "ACTIVITY_TYPE"],
+      "rule_type": "semantic_nonsense",
+      "explanation": "Sleeping cannot be combined with eating or active activities.",
+      "examples": ["sleeping and ate"]
+    }
+  ],
+  "ambiguous_patterns": [
+    {
+      "pattern": "did everything",
+      "rule_type": "ambiguous_dimension",
+      "explanation": "The verb 'did' is too generic to infer a specific dimension without additional context. Refuse extraction or set confidence below 0.5.",
+      "action": "refuse_or_low_confidence",
+      "examples": ["he did everything", "il a tout fait"]
+    },
+    {
+      "pattern": "pronoun without name",
+      "rule_type": "ambiguous_subject",
+      "explanation": "Pronouns (he, she, it) without explicit names require very high confidence in dimension inference. Lower confidence to below 0.7.",
+      "action": "lower_confidence",
+      "examples": ["he ate", "she slept"]
+    },
+    {
+      "pattern": "everything without verb",
+      "rule_type": "ambiguous_dimension",
+      "explanation": "The word 'everything' without a clear action verb is too vague to determine dimension.",
+      "action": "refuse_or_low_confidence",
+      "examples": ["everything", "tout"]
+    }
+  ]
+}

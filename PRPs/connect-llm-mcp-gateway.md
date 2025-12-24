@@ -395,7 +395,7 @@ Domain-agnostic prompts for semantic normalization.
 All domain knowledge comes from RAG context and tool schema.
 """
 
-SYSTEM_PROMPT = """You are a semantic normalization assistant for a nursery tracking system.
+SYSTEM_PROMPT = """You are a semantic normalization assistant for event tracking system.
 
 Your task is to interpret natural language utterances and call the appropriate tool to record events.
 
@@ -407,7 +407,7 @@ IMPORTANT RULES:
 5. If the utterance contains multiple facts, make multiple tool calls
 6. The RELEVANT KNOWLEDGE section shows valid dimension/value pairs from similar phrases
 
-DO NOT invent dimensions or values - only use what's available in the tool schema.
+DO NOT invent dimensions or values - only use what's available in the tool schema get_valid_dimensions().
 If no tool applies, respond with a text message explaining why."""
 
 # RAG context is injected dynamically - no hardcoded values here
